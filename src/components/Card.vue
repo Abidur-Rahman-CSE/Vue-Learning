@@ -11,11 +11,24 @@
                 This is default title
             </slot>
         </h3>
-        <div>
+        <button @click="show = !show">
+            {{ show ? 'Hide' : 'Show' }} Details
+        </button>
+        <div v-if="show">
             <slot>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores expedita aliquam in officiis temporibus?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </slot>
         </div>
+        <br>
+        <br>
+        <div>
+            <button @click="activeTab = 1">Tab 1</button>|
+            <button @click="activeTab = 2">Tab 2</button>|
+            <button @click="activeTab = 3">Tab 3</button>
+        </div>
+        <div v-if="activeTab === 1">Tab Body 1</div>
+        <div v-if="activeTab === 2">Tab Body 2</div>
+        <div v-if="activeTab === 3">Tab Body 3</div>
     </div>
 </template>
 
@@ -29,7 +42,13 @@ export default {
             type: String,
             default: "",
         },
-    }
+    },
+    data() {
+        return {
+            show: false,
+            activeTab: 1,
+        }
+    },
 
 }
 </script>
