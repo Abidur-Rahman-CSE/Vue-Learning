@@ -1,9 +1,44 @@
 <template>
     <h2 class="heading">About US</h2>
     <section id="service1">
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, libero, fugit deserunt odit pariatur unde voluptas laboriosam porro ratione eum quidem aut esse dolorem facere. Magni dolor dolorum esse mollitia?</div>
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, accusantium! Quibusdam harum corporis error officia autem praesentium iste laboriosam aperiam consequuntur velit id consequatur dolorum atque, odit cupiditate ex sapiente!</div>
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, libero, fugit deserunt odit pariatur unde voluptas laboriosam porro ratione eum quidem aut esse dolorem facere. Magni dolor dolorum esse mollitia?</div>
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, accusantium! Quibusdam harum corporis error officia autem praesentium iste laboriosam aperiam consequuntur velit id consequatur dolorum atque, odit cupiditate ex sapiente!</div>
+      <Card title="This is title">
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur.
+          </li>
+          <li>
+            Lorem ipsum dolor sit aliquid placeat nobis!
+          </li>
+        </ul>
+      </Card>
+      <Card>
+        <template #title>
+          This is slot title
+        </template>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur.
+          </li>
+          <li>
+            Lorem ipsum dolor sit aliquid placeat nobis!
+          </li>
+        </ul>
+      </Card>
+      <Card>
+        <template #icon>
+          <SettingIcon width="50" />        
+        </template>
+      </Card>
     </section>
 </template>
+
+<script>
+import Card from "@/components/Card.vue"
+import { SettingIcon } from "@/components/icons";
+export default {
+  components: {
+    Card,
+    SettingIcon,
+  }
+}
+</script>
